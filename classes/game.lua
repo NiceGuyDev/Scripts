@@ -1,5 +1,4 @@
 local gameClass = baseClass:derive("gameClass")
-local engineRenderer = engine.renderer
 
 function gameClass.new()
 
@@ -138,16 +137,12 @@ end
 function gameClass:textInput(letter) end
 function gameClass:mousePressed(x, y, button, isTouch, presses) end
 function gameClass:mouseReleased(x, y, button, isTouch, presses) end
-function gameClass:drawHUD(interpolation) end
-function gameClass:drawGUI(interpolation) end
 function gameClass:resize(width, height) end
 function gameClass:mouseWheel(x, y) end
 function gameClass:drawPostProcessing() end
 function gameClass:keyPressed(key) end
 function gameClass:keyReleased(key) end
 function gameClass:tick(timeStep) end
-function gameClass:drawEntities() end
-function gameClass:drawBackground() end
 function gameClass:gamepadPressed(gamepad, button) end
 function gameClass:gamepadReleased(gamepad, button) end
 function gameClass:gamepadAxis(gamepad, axis, value) end
