@@ -21,19 +21,19 @@ end
 
 function colorMetaObjects:__add(clr)
 
-	return color(self.r + clr.r, self.g + clr.g, self.b + clr.b, self.a + clr.a)
+	return colorClass(self.r + clr.r, self.g + clr.g, self.b + clr.b, self.a + clr.a)
 
 end
 
 function colorMetaObjects:__sub(clr)
 
-	return color(self.r - clr.r, self.g - clr.g, self.b - clr.b, self.a - clr.a)
+	return colorClass(self.r - clr.r, self.g - clr.g, self.b - clr.b, self.a - clr.a)
 
 end
 
 function colorMetaObjects:__mul(number)
 
-	return color(self.r * number, self.g * number, self.b * number, self.a * number)
+	return colorClass(self.r * number, self.g * number, self.b * number, self.a * number)
 
 end
 
@@ -41,7 +41,7 @@ function colorMetaObjects:__div(number)
 
 	if number ~= 0 then
 
-		return color(self.r / number, self.g / number, self.b / number, self.a / number)
+		return colorClass(self.r / number, self.g / number, self.b / number, self.a / number)
 
 	end
 

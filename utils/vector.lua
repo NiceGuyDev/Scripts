@@ -1,4 +1,4 @@
-local vector, vectorMetaMethods, vectorMetaObjects = baseClass:derive("vector")
+local vectorClass, vectorMetaMethods, vectorMetaObjects = baseClass:derive("vector")
 local mathLength, mathDistance, mathNormalize, mathAtan2 = math.length, math.distance, math.normalize, math.atan2
 
 function vectorMetaObjects:__call()
@@ -9,19 +9,19 @@ end
 
 function vectorMetaObjects:__add(vec)
 
-	return vector(self.x + vec.x, self.y + vec.y)
+	return vectorClass(self.x + vec.x, self.y + vec.y)
 
 end
 
 function vectorMetaObjects:__sub(vec)
 
-	return vector(self.x - vec.x, self.y - vec.y)
+	return vectorClass(self.x - vec.x, self.y - vec.y)
 
 end
 
 function vectorMetaObjects:__mul(number)
 
-	return vector(self.x * number, self.y * number)
+	return vectorClass(self.x * number, self.y * number)
 
 end
 
@@ -29,7 +29,7 @@ function vectorMetaObjects:__div(number)
 
 	if number ~= 0 then
 
-		return vector(self.x / number, self.y / number)
+		return vectorClass(self.x / number, self.y / number)
 
 	end
 
@@ -43,11 +43,11 @@ end
 
 function vectorMetaObjects:__pow(number)
 
-	return vector(self.x ^ number, self.y ^ number)
+	return vectorClass(self.x ^ number, self.y ^ number)
 
 end
 
-function vector.new(x, y)
+function vectorClass.new(x, y)
 
 	return {
 		x = x or 0,
@@ -56,34 +56,34 @@ function vector.new(x, y)
 
 end
 
-function vector:length()
+function vectorClass:length()
 
 	return mathLength(self.x, self.y)
 
 end
 
-function vector:distance(vec)
+function vectorClass:distance(vec)
 
   	return mathDistance(self.x, self.y, vec.x, vec.y)
 
 end
 
-function vector:normalize()
+function vectorClass:normalize()
 
 	return mathNormalize(self.x, self.y)
 
 end
 
-function vector:radian()
+function vectorClass:radian()
 
 	return mathAtan2(self.x, self.y)
 
 end
 
-function vector:degree()
+function vectorClass:degree()
 
 	return self:radian() * 180 / math.pi
 
 end
 
-return vector
+return vectorClass
